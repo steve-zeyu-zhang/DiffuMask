@@ -10,7 +10,7 @@ DiffuMask: Synthesizing Images with Pixel-level Annotations for Semantic Segment
 ## :hammer_and_wrench: Getting Started with DiffuMask
 ### Conda env installation
 
-```sh
+```
 conda create -n DiffuMask python=3.8
 
 conda activate DiffuMask
@@ -19,6 +19,7 @@ conda activate DiffuMask
 install pydensecrf https://github.com/lucasb-eyer/pydensecrf
 
 ```
+cd DiffuMask
 
 pip install git+https://github.com/lucasb-eyer/pydensecrf.git
 
