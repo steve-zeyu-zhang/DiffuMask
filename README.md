@@ -41,13 +41,19 @@ https://github.com/pesser/stable-diffusion/issues/14
 sh ./script/DiffusionGeneration/VOC_data_generation.sh
 ```
 
+or
+
+```
+CUDA_VISIBLE_DEVICES=0 python3 ./Stable_Diffusion/parallel_generate_VOC_Attention_AnyClass.py --classes aeroplane --thread_num 4 --output ./DiffMask_VOC/ --image_number 8000 --MY_TOKEN '0mzLY4TtGUkaACnbL8geexjfmx7eteZYGVJQZVaqb33qTA4hzkSRZRbgF4qQ'
+```
+
 ### 2. Refine Mask with AffinityNet (Coarse Mask)
 ```
 # prepare training data for affinity net
 sh ./script/prepare_aff_data.sh
 
 # train affinity net
-Before training, you need to download the ResNet-38 ImageNet pre-trained weights and place them in the "./pretrained_model" directory
+# Before training, you need to download the ResNet-38 ImageNet pre-trained weights and place them in the "./pretrained_model" directory, and rename as 'res38_cls.pth'
 sh ./script/train_affinity.sh
 
 # inference affinity net
